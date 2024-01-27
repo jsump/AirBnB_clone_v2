@@ -71,12 +71,14 @@ def show_number_even_or_odd(n):
     This method displays a html page only if n is an intger
     H1 tag:"Number: n" inside tag body
     """
-    if n % 2 == 0:
-        odd_or_even = 'even'
-    else:
-        odd_or_even = 'odd'
-    return render_template('6-number_odd_or_even.html', number=n,
-                           odd_or_even=odd_or_even)
+    def is_odd_or_even(n):
+        """
+        Determine if number is odd or even
+        """
+        return 'even' if n % 2 == 0 else 'odd'
+
+    return render_template('6-number_odd_or_even.html', n=n,
+                           odd_or_even=is_odd_or_even(n))
 
 
 if __name__ == '__main__':
