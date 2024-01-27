@@ -62,7 +62,7 @@ def show_number_template(n):
     """
     This method displays a html page is n is an integer
     """
-    return render_template('5-number.html', n=n)
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == '__main__':
